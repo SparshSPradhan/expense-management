@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Hajiri Logo">
+            <h2>Hajiri</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><i class="fas fa-home"></i> <span>Dashboard</span></li>
+
+                <h4>PEOPLE</h4>
+                <li><i class="fas fa-users"></i> <span>Employee</span></li>
+                <li><i class="fas fa-user-friends"></i> <span>Team</span></li>
+
+                <h4>MANAGEMENT</h4>
+                <li><i class="fas fa-calendar-check"></i> <span>Attendance</span></li>
+                <li><i class="fas fa-plane"></i> <span>Leaves</span></li>
+                <li><i class="fas fa-box"></i> <span>Assets</span></li>
+                <li><i class="fas fa-chart-line"></i> <span>Reports</span></li>
+                <li><i class="fas fa-coins"></i> <span>Super Coins</span></li>
+
+                <h4>PAYROLL</h4>
+                <li><i class="fas fa-clipboard-list"></i> <span>Dashboard</span></li>
+                <li><i class="fas fa-file-invoice"></i> <span>EPF, ESI & TDS</span></li>
+                <li><i class="fas fa-receipt"></i> <span>Generate Salary Slip</span></li>
+
+                <h4>COMPANY</h4>
+                <li><i class="fas fa-cog"></i> <span>Company Setting</span></li>
+                <li><i class="fas fa-user-clock"></i> <span>Attendance Setting</span></li>
+                <li><i class="fas fa-user-cog"></i> <span>Leave Setting</span></li>
+                <li><i class="fas fa-file-contract"></i> <span>Salary Setting</span></li>
+            </ul>
+        </nav>
+
+        <div class="premium">
+            <p>⭐ Premium</p>
+            <button>Modify</button>
+        </div>
+
+        <div class="user-info">
+            <img src="user.jpg" alt="User">
+            <div>
+                <p class="username">Hajiri</p>
+                <p class="email">hajiri123@gmail.com</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header class="top-bar">
+            <div class="top-left">
+                <h1>Expense Management</h1>
+                <p class="sub-text">Manage Employee Expense Reimbursements</p>
+            </div>
+        
+            <div class="top-right">
+                <div class="inbox">
+                    <i class="fas fa-envelope"></i>
+                    <span>My Inbox</span>
+                </div>
+                <div class="user-icon">M</div>
+            </div>
+        </header>
+        
+        
+            <div class="top-buttons">
+                <button class="top-btn">Dashboard</button>
+                <button class="top-btn">Expense Request</button>
+                <button class="top-btn">Company Expense Policy</button>
+                <button class="top-btn">Company Wallet</button>
+
+            </div>
+
+
+           
+            
+        
+      <!-- Date Range and Wallet Section -->
+<div class="filters-wallet-container">
+    <!-- Date Range Filter -->
+    <div class="date-range">
+        <label for="date-picker">Date Range:</label>
+        <input type="date" id="start-date"> to
+        <input type="date" id="end-date">
+    </div>
+
+    <!-- Wallet Section -->
+    <div class="wallet-section">
+        <h2>Company Wallet</h2>
+        <p>Your Balance: <strong>₹16,05,894</strong></p>
+        <div class="spending-limit">
+            <span>Spending Limit: ₹10,05,894</span>
+        </div>
+    </div>
+</div>
+
+<div class="categories-client-container">
+    <!-- Expense Categories -->
+    <!-- <div class="categories">
+        <h2>Categories</h2>
+        <ul>
+            <li>Travel & Transportation (20%) - ₹80,240</li>
+            <li>Employee Reimbursements (13%) - ₹13,240</li>
+            <li>Office & Administration (13%) - ₹13,240</li>
+            <li>Client Engagement & Entertainment (9%) - ₹11,240</li>
+            <li>Training & Development (8%) - ₹10,240</li>
+            <li>Professional Fees (10%) - ₹20,240</li>
+        </ul>
+    </div> -->
+    <div class="categories">
+        <!-- Dropdown for selecting duration -->
+        <div class="category-header">
+            <h2>Categories</h2>
+            <select class="category-dropdown">
+                <option selected>Week</option>
+                <option>Month</option>
+                <option>Year</option>
+            </select>
+        </div>
+
+    
+        <!-- Expense List with Colored Dots -->
+        <ul class="expense-list">
+            <li><span class="dot color1"></span> Travel & Transportation (20%) - ₹80,240</li>
+            <li><span class="dot color2"></span> Employee Reimbursements (13%) - ₹13,240</li>
+            <li><span class="dot color3"></span> Office & Administration (13%) - ₹13,240</li>
+            <li><span class="dot color4"></span> Client Engagement & Entertainment (9%) - ₹11,240</li>
+            <li><span class="dot color5"></span> Training & Development (8%) - ₹10,240</li>
+            <li><span class="dot color6"></span> Professional Fees (10%) - ₹20,240</li>
+            <li><span class="dot color7"></span> IT & Software (10%)  - ₹40,240</li>
+            <li><span class="dot color8"></span> Miscellaneous Expenses (6%)  - ₹50,240</li>
+
+        </ul>
+     <!-- Heading for Expense Types -->
+ <h3 class="expense-title">10 Types Of Expense</h3>
+    
+ <!-- Expense Meter -->
+ <div class="expense-meter">
+     <div class="meter-bar color1" style="width: 20%"></div>
+     <div class="meter-bar color2" style="width: 13%"></div>
+     <div class="meter-bar color3" style="width: 13%"></div>
+     <div class="meter-bar color4" style="width: 9%"></div>
+     <div class="meter-bar color5" style="width: 8%"></div>
+     <div class="meter-bar color6" style="width: 10%"></div>
+ </div>
+</div>
+
+       
+    
+    <!-- Client Report -->
+    <!-- <div class="client-report">
+        <h2>Client Report</h2>
+        <div class="client">
+            <span>Wekrata</span>
+            <span>50% - ₹54,240</span>
+        </div>
+        <div class="client">
+            <span>Wekrata</span>
+            <span>60% - ₹84,240</span>
+        </div>
+        <div class="client">
+            <span>Wekrata</span>
+            <span>30% - ₹94,240</span>
+        </div>
+    </div>
+</div> -->
+   <!-- Client Report Section -->
+   <div class="client-report">
+    <div class="client-header">
+        <h2>Client Report</h2>
+        <select class="client-dropdown">
+            <option selected>Week 1</option>
+            <option>Week 2</option>
+            <option>Week 3</option>
+            <option>Week 4</option>
+        </select>
+    </div>
+
+    <div class="client-grid">
+        <!-- Client 1 -->
+        <div class="client">
+            <div class="client-info">
+                <img src="company1-logo.png" alt="Wekrata Logo" class="client-logo">
+                <div>
+                    <span class="client-name">Wekrata</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="client-amount">
+                ₹54,240
+                <span class="client-text">This week</span>
+            </div>
+        </div>
+
+        <!-- Client 2 -->
+        <div class="client">
+            <div class="client-info">
+                <img src="company2-logo.png" alt="Alpha Corp Logo" class="client-logo">
+                <div>
+                    <span class="client-name">Alpha Corp</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="client-amount">
+                ₹84,240
+                <span class="client-text">This week</span>
+            </div>
+        </div>
+
+        <!-- Client 3 -->
+        <div class="client">
+            <div class="client-info">
+                <img src="company3-logo.png" alt="Beta Ltd Logo" class="client-logo">
+                <div>
+                    <span class="client-name">Beta Ltd</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="client-amount">
+                ₹94,240
+                <span class="client-text">This week</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Total Money Spent & Dropdown -->
+    <div class="client-footer">
+        <span class="total-spent">Total money spent till now ₹54,240</span>
+        <select class="view-details-dropdown">
+            <option selected>View Details</option>
+            <option>Monthly Report</option>
+            <option>Yearly Report</option>
+        </select>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<!-- Employee Wallet Transactions -->
+<div class="wallet-transactions">
+    <h3>Employee Wallet Transactions</h3>
+    <ul id="transaction-list">
+        <li data-date="2025-02-10">
+            <div class="employee-info">
+                <span class="employee-name">John Doe</span>
+                <span class="department">Marketing Department</span>
+            </div>
+            <div class="transaction-info">
+                <span class="amount">₹5,000</span>
+                <span class="date">Feb 10, 2025</span>
+            </div>
+        </li>
+        <li data-date="2025-02-12">
+            <div class="employee-info">
+                <span class="employee-name">Jane Smith</span>
+                <span class="department">Finance Department</span>
+            </div>
+            <div class="transaction-info">
+                <span class="amount">₹8,200</span>
+                <span class="date">Feb 12, 2025</span>
+            </div>
+        </li>
+        <li data-date="2025-02-13">
+            <div class="employee-info">
+                <span class="employee-name">Michael Brown</span>
+                <span class="department">IT Department</span>
+            </div>
+            <div class="transaction-info">
+                <span class="amount">₹3,450</span>
+                <span class="date">Feb 13, 2025</span>
+            </div>
+        </li>
+        <li data-date="2025-02-14">
+            <div class="employee-info">
+                <span class="employee-name">Lisa Johnson</span>
+                <span class="department">HR Department</span>
+            </div>
+            <div class="transaction-info">
+                <span class="amount">₹2,100</span>
+                <span class="date">Feb 14, 2025</span>
+            </div>
+        </li>
+       
+       
+    </ul>
+</div>
+
+<!-- See All Transactions Button -->
+<button class="see-all-btn">See All Transactions</button>
+
+<script>
+    document.getElementById('start-date').addEventListener('change', filterTransactions);
+    document.getElementById('end-date').addEventListener('change', filterTransactions);
+
+    function filterTransactions() {
+        let startDate = document.getElementById('start-date').value;
+        let endDate = document.getElementById('end-date').value;
+        let transactions = document.querySelectorAll('#transaction-list li');
+
+        transactions.forEach(transaction => {
+            let transactionDate = transaction.getAttribute('data-date');
+            if (startDate && endDate) {
+                transaction.style.display = (transactionDate >= startDate && transactionDate <= endDate) ? 'block' : 'none';
+            } else {
+                transaction.style.display = 'block';
+            }
+        });
+    }
+</script>
+    
+
+
+<div class="departmental-budget">
+    <h2>Departmental Budget Allocation</h2>
+    <div class="department-container">
+        <div class="department">
+            <span class="department-name">Marketing</span>
+            <span class="department-amount">₹30,000</span>
+            <div class="budget-bar">
+                <div class="budget-fill" style="width: 60%"></div>
+            </div>
+        </div>
+
+        <div class="department">
+            <span class="department-name">IT & Software</span>
+            <span class="department-amount">₹50,000</span>
+            <div class="budget-bar">
+                <div class="budget-fill" style="width: 80%"></div>
+            </div>
+        </div>
+
+        <div class="department">
+            <span class="department-name">Human Resources</span>
+            <span class="department-amount">₹20,000</span>
+            <div class="budget-bar">
+                <div class="budget-fill" style="width: 40%"></div>
+            </div>
+        </div>
+
+        <div class="department">
+            <span class="department-name">Operations</span>
+            <span class="department-amount">₹60,000</span>
+            <div class="budget-bar">
+                <div class="budget-fill" style="width: 90%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Right Section: Summary Cards, Categories & Client Report -->
+<section class="right-section">
+    <div class="summary-cards">
+        <div class="card">
+            <h3>Settled Expense</h3>
+            <p>₹1,24,420</p>
+            <small>↑ 13% up from last week</small>
+        </div>
+        <div class="card">
+            <h3>Un-Settled Expense</h3>
+            <p>₹80,240</p>
+            <small>↓ 4.3% down from last week</small>
+        </div>
+        <div class="card">
+            <h3>In Process</h3>
+            <p>₹34,240</p>
+            <small>24 Requests this week</small>
+        </div>
+        <div class="card">
+            <h3>Rejected Expense</h3>
+            <p>₹1,240</p>
+            <small>12 Requests in this week</small>
+        </div>
+        <div class="card">
+            <h3>Client Expense</h3>
+            <p>₹14,240</p>
+            <small>↑ 1.3% up from last week</small>
+        </div>
+    </div>
+</section>
+
+
+    </main>
+    
+</body>
+
+</html> 
+
